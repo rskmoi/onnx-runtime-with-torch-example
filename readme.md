@@ -23,7 +23,7 @@ python 06_onnxruntime_server_grpc.py
 
 ## How to run onnx runtime server container
 - [Official Dockerfile](https://github.com/microsoft/onnxruntime/blob/master/dockerfiles/Dockerfile.server)
-- [Build & Run](https://github.com/microsoft/onnxruntime/blob/master/dockerfiles/Dockerfile.server)
+- [Build & Run](https://github.com/microsoft/onnxruntime/tree/master/dockerfiles#onnx-runtime-server)
 
 ## onnx_model_cli
 onnx_model_cli helps checking onnx model structure.
