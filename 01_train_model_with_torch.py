@@ -6,7 +6,7 @@ from tqdm import tqdm
 from sklearn.metrics import accuracy_score
 from tools.util import get_model
 import tools.defaults as defaults
-import tools.data_util as data
+import tools.data_util as data_util
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -30,7 +30,7 @@ class ColorDataset(Dataset):
         """
         label_name = self.label_names[idx]
         label = self._colors.index(label_name)
-        image = data.get_image(color=label_name)
+        image = data_util.get_image(color=label_name)
         image = self.transforms(image)
         sample = {"image": image, "label": label}
         return sample

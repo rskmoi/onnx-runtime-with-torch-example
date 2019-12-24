@@ -1,14 +1,14 @@
 import numpy as np
 import onnxruntime
 import tools.defaults as defaults
-import tools.data_util as data
+import tools.data_util as data_util
 
 
 def inference(onnx_model_path):
     sess = onnxruntime.InferenceSession(onnx_model_path)
     colors = defaults.COLORS
     for color in colors:
-        input_array = data.get_transformed_array(color)
+        input_array = data_util.get_transformed_array(color)
         output = sess.run(['output_0'], {'input_0': input_array})
         pred = np.argmax(np.squeeze(output))
 
