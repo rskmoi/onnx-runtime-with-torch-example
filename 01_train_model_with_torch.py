@@ -23,11 +23,6 @@ class ColorDataset(Dataset):
         return len(self.label_names)
 
     def __getitem__(self, idx):
-        """
-        train modeでは画像とカテゴリID、test modeでは画像とkey_idを返す
-        :param idx:
-        :return:
-        """
         label_name = self.label_names[idx]
         label = self._colors.index(label_name)
         image = data_util.get_image(color=label_name)
